@@ -6,7 +6,7 @@ with col1:
 with col2:
     st.write("Welcome to Result Portal of St.Joseph Global School (CBSE) - Polivakkam")
 with col3:
-    st.write("")
+    st.write("Vikash")
 d = 0
 c = ""
 a = st.selectbox( "Select the class?", ("GRADE - 6", "GRADE - 7", "GRADE - 8", "GRADE - 9"),)
