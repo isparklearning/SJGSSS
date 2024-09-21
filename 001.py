@@ -39,18 +39,11 @@ if st.button("Submit"):
         st.write(dataframe1)
         with open(c+f, "rb") as template_file:
             template_byte = template_file.read
-            col1, col2, col3 = st.columns(3)
-            with col1:
-                st.download_button(label="Click to Download File as Excel",
+            st.download_button(label="Click to Download File as Excel",
                         data=template_byte,
                          file_name=c+f,
                          mime='application/octet-stream')
-            with col2:
                 st.download_button(label="Click to Download File as PDF",
                            data=template_byte,
                            file_name=c+".pdf",
                            mime='application/octet-stream')
-            with col3:
-                st.write("Designed & Developed by iSpark Learning Solution Pvt LTD.")
-            
-            
