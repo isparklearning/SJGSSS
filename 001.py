@@ -39,7 +39,10 @@ if st.button("Submit"):
     if d == 1:
         st.warning("Please Select a Valid Class")
     else:
-        st.success('Found!', icon="✅")
+        if d == 1:
+            pass
+        else:
+            st.success('Found!', icon="✅")
         dataframe1 = pd.read_excel(c + f)
         st.write(e)
         st.write(dataframe1)
