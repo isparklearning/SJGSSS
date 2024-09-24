@@ -1,12 +1,11 @@
 import streamlit as st
 import pandas as pd
-col1, col2, col3 = st.columns(3)
+import time
+col1, col2 = st.columns(2)
 with col1:
     st.image("001.png")
 with col2:
-    st.write("Welcome to Result Portal of St.Joseph Global School (CBSE) - Polivakkam")
-with col3:
-    st.write("")
+    st.subheader("Welcome to Result Portal of St.Joseph Global School (CBSE) - Polivakkam \n Assesment - 1")
 d = 0
 c = ""
 a = st.selectbox( "Select the class?", ("GRADE - 6", "GRADE - 7", "GRADE - 8", "GRADE - 9"),)
@@ -30,7 +29,14 @@ else:
 f = ".xlsx"
 e = "Here is the Result of " + c
 if st.button("Submit"):
+    progress_text = "Operation in progress. Please wait."
+    my_bar = st.progress(0, text=progress_text)
 
+    for percent_complete in range(100):
+        time.sleep(0.01)
+        my_bar.progress(percent_complete + 1, text=progress_text)
+    time.sleep(1)
+    my_bar.empty()
     if d == 1:
         st.warning("Please Select a Valid Class")
     else:
@@ -38,7 +44,7 @@ if st.button("Submit"):
         st.write(e)
         st.write(dataframe1)
         with open(c+f, "rb") as template_file:
-            template_byte = template_file.read
+            template_byte = template_file.read()
             st.download_button(label="Click to Download File as Excel",
                         data=template_byte,
                          file_name=c+f,
