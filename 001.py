@@ -52,7 +52,3 @@ if st.button("Submit"):
                         data=template_byte,
                          file_name=c+f,
                          mime='application/octet-stream')
-            st.download_button(label="Click to Download File as PDF",
-                           data=template_byte,
-                           file_name=c+".pdf",
-                           mime='application/octet-stream')
